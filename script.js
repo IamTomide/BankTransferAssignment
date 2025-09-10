@@ -37,14 +37,23 @@ accountFour.balance += depositTwo;
 console.log(`Hi ${accountFour.name}, You got a deposit of ${depositTwo}. Your new balance is ${accountFour.balance}`);
 
 // Question 3: Attempt withdrawal
-const withdrawalAmount = 19950;
+const withdrawalAmount1 = 19950;
+const withdrawalAmount2 = 100000;
 
 // Withdrawal attempt on account three
-if (accountThree.balance >= withdrawalAmount) {
-    accountThree.balance -= withdrawalAmount
-    console.log(`Hi ${accountThree.name}, You have successfully withrawn ${withdrawalAmount}. Your new balance is ${accountThree.balance}`)
+if (accountThree.balance >= withdrawalAmount1) {
+    accountThree.balance -= withdrawalAmount1
+    console.log(`Hi ${accountThree.name}, You have successfully withrawn ${withdrawalAmount1}. Your new balance is ${accountThree.balance}`)
 } else {
     console.log(`Withdrawal denied for ${accountThree.name}: insufficient funds`)
+}
+
+// Withdrawal attempt on account four
+if (accountFour.balance >= withdrawalAmount2) {
+    accountFour.balance -= withdrawalAmount2
+    console.log(`Hi ${accountFour.name}, You have successfully withrawn ${withdrawalAmount2}. Your new balance is ${accountFour.balance}`)
+} else {
+    console.log(`Withdrawal denied for ${accountFour.name}: insufficient funds`)
 }
 
 // Question 4: Transfers
@@ -109,15 +118,17 @@ console.log(`Hi ${highestAccount.name}, You have the highest balance of ${highes
 console.log(`Hi ${lowestAccount.name}, You have the lowest balance of ${lowestAccount.balance}`)
 
 // Question 7: Account status check
+
 let accountstatus1 = "";
 // check for account one
 if (accountOne.balance > 0) {
     accountstatus1 = "Active";
-} else if (accountThree.balance === 0) {
+} else if (accountOne.balance === 0) {
     accountstatus1 = "Empty";
 } else {
     accountstatus1 = "Overdrawn"
 }
+
 let accountstatus2 = "";
 // check for account two
 if (accountTwo.balance > 0) {
@@ -127,8 +138,9 @@ if (accountTwo.balance > 0) {
 } else {
     accountstatus2 = "Overdrawn"
 }
+
 let accountstatus3 = "";
-// check for account one
+// check for account three
 if (accountThree.balance > 0) {
     accountstatus3 = "Active";
 } else if (accountThree.balance === 0) {
@@ -136,8 +148,9 @@ if (accountThree.balance > 0) {
 } else {
     accountstatus3 = "Overdrawn"
 }
+
 let accountstatus4 = "";
-// check for account one
+// check for account four
 if (accountFour.balance > 0) {
     accountstatus4 = "Active";
 } else if (accountThree.balance === 0) {
@@ -145,6 +158,9 @@ if (accountFour.balance > 0) {
 } else {
     accountstatus4 = "Overdrawn"
 }
+
+
+
 
 // Question 8: Transaction Summary
 console.log(`${accountOne.name}'s final balance is ${accountOne.balance}: Status- ${accountstatus1}`);
